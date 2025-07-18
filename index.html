@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Rathi - Software Quality Evangelist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            color: #ffd700;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 50%;
+            padding-right: 40px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 50%;
+            padding-left: 40px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border: 2px solid #e8f2ff;
+        }
+
+        .company-logo.whereto {
+            background: white;
+            color: #333;
+            font-size: 0.7rem;
+            font-weight: 900;
+            border: 2px solid #00b8d4;
+        }
+
+        .company-logo.whereto .logo-to {
+            color: #00b8d4;
+        }
+
+        .company-logo.spglobal {
+            background: white;
+            color: #d32f2f;
+            font-size: 0.6rem;
+            font-weight: 900;
+            border: 2px solid #d32f2f;
+            line-height: 1.1;
+        }
+
+        .company-logo.publicis {
+            background: white;
+            color: #333;
+            font-size: 0.6rem;
+            font-weight: 900;
+            border: 2px solid #e91e63;
+            line-height: 1.1;
+        }
+
+        .company-logo.publicis .sapient-red {
+            color: #e91e63;
+        }
+
+        .company-logo.hogarth {
+            background: white;
+            border: 2px solid #333;
+            padding: 5px;
+        }
+
+        .company-logo.hogarth img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .company-logo.impetus {
+            background: white;
+            border: 2px solid #333;
+            padding: 5px;
+        }
+
+        .company-logo.impetus img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .company-info h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .duration {
+            background: #e8f2ff;
+            color: #667eea;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        .location {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding: 0;
+        }
+
+        .responsibilities li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .framework-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: white;
+            color: #667eea;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 2px solid #e8f2ff;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            transform: translateY(-3px) scale(1.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+
+            .company-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Ankit Rathi</h1>
+            <div class="subtitle">Software Quality Evangelist | QA Leadership Expert | Test Automation Architect</div>
+            <div class="contact-info">
+                <a href="mailto:ankitrathi85@gmail.com" class="contact-item">
+                    📧 ankitrathi85@gmail.com
+                </a>
+                <a href="tel:+16478645547" class="contact-item">
+                    📞 +1 (647) 864-5547
+                </a>
+                <span class="contact-item">
+                    📍 Toronto, Ontario, Canada
+                </span>
+                <a href="https://www.linkedin.com/in/ankitrathi85" target="_blank" class="contact-item">
+                    💼 LinkedIn
+                </a>
+                <a href="https://medium.com/@ankitrathi85" target="_blank" class="contact-item">
+                    📝 Blog
+                </a>
+            </div>
+            <div style="margin-top: 20px; background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 20px; display: inline-block;">
+                🇨🇦 Canadian PR Holder - Authorized to work for any employer
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">18+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Positions Held</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Companies</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Team Members Led</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Frameworks Developed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                
+                <!-- WhereTo -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo whereto">where<span class="logo-to">To</span></div>
+                            <div class="company-info">
+                                <h3>WhereTo, a Flight Centre Company</h3>
+                                <div class="job-title">Head of QA</div>
+                            </div>
+                        </div>
+                        <div class="duration">April 22, 2022 - June 30, 2025 (3 years 2 months)</div>
+                        <div class="location">📍 Toronto, Canada</div>
+                        <ul class="responsibilities">
+                            <li>Led enterprise-scale QA transformation for global travel technology platform serving NORAM and EMEA markets</li>
+                            <li>Managed 8 specialized Scrum teams with 25+ QA engineers across multiple business domains</li>
+                            <li>Designed and led development of <span class="framework-highlight">JET Automation Framework</span> (WebDriverIO, Mocha)</li>
+                            <li>Strategic setup of Integration QA Team for vendor integration tests</li>
+                            <li>Established Center of Excellence (COE) team for Test Automation guidelines</li>
+                            <li>Developed <span class="framework-highlight">RADAR Framework</span> - Test Maturity framework for grading QA practices</li>
+                            <li>Implemented advanced analytics infrastructure with real-time dashboards and predictive metrics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- S&P Global Platts - Associate Director -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo spglobal">S&P<br>Global</div>
+                            <div class="company-info">
+                                <h3>S&P Global Platts</h3>
+                                <div class="job-title">Associate Director, Test Engineering</div>
+                            </div>
+                        </div>
+                        <div class="duration">April 2020 - April 15, 2022 (2 years 1 month)</div>
+                        <div class="location">📍 Gurgaon, India</div>
+                        <ul class="responsibilities">
+                            <li>Led enterprise test engineering transformation for global financial data and analytics platform</li>
+                            <li>Managed Center of Excellence team and drove automation standards across 25+ Scrum teams</li>
+                            <li>Implemented <span class="framework-highlight">NEST Framework</span> (Next Generation Software Testing) to drive best practices</li>
+                            <li>Received CTO recognition for Platts Get Stuff Done delivery culture</li>
+                            <li>Established enterprise-wide quality standards and governance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- S&P Global Platts - Senior Manager -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo spglobal">S&P<br>Global</div>
+                            <div class="company-info">
+                                <h3>S&P Global Platts</h3>
+                                <div class="job-title">Senior Manager, TestOps</div>
+                            </div>
+                        </div>
+                        <div class="duration">March 22, 2019 - April 2020 (1 year 1 month)</div>
+                        <div class="location">📍 Gurgaon, India</div>
+                        <ul class="responsibilities">
+                            <li>Created Jenkins pipeline standards replicated across teams for continuous test integration</li>
+                            <li>Drove DevOps implementations using DevOps 3D Dashboard for tracking team maturity</li>
+                            <li>Led TestOps transformation and continuous testing initiatives</li>
+                            <li>Established CI/CD best practices across development teams</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- S&P Global Platts - Automation Architect -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo spglobal">S&P<br>Global</div>
+                            <div class="company-info">
+                                <h3>S&P Global Platts</h3>
+                                <div class="job-title">Automation Architect</div>
+                            </div>
+                        </div>
+                        <div class="duration">November 13, 2017 - March 21, 2019 (1 year 4 months)</div>
+                        <div class="location">📍 Gurgaon, India</div>
+                        <ul class="responsibilities">
+                            <li>Established automation architecture and standards</li>
+                            <li>Led technical framework design and implementation initiatives</li>
+                            <li>Designed and implemented <span class="framework-highlight">PACE Framework</span> adopted by 25+ Scrum teams (Selenium, Java)</li>
+                            <li>Drove automation standardization across multiple teams</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRODIGI India -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo hogarth">
+                                <img src="https://www.hogarth.com/themes/custom/hogarth/images/hww_logo.svg" alt="Hogarth Logo" onerror="this.style.display='none'; this.parentNode.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.parentNode.style.color='white'; this.parentNode.innerHTML='PH';">
+                            </div>
+                            <div class="company-info">
+                                <h3>PRODIGI India (Quasar Media / Hogarth India)</h3>
+                                <div class="job-title">QA Lead</div>
+                            </div>
+                        </div>
+                        <div class="duration">September 3, 2015 - November 10, 2017 (2 years 2 months)</div>
+                        <div class="location">📍 Gurgaon, India</div>
+                        <ul class="responsibilities">
+                            <li>Led QA delivery for Apple Website localization for Middle East region</li>
+                            <li>Managed end-to-end testing strategy for high-profile digital media campaigns</li>
+                            <li>Developed automation tools using Java for Digital Media (Email) Testing</li>
+                            <li>Led automation using Selenium WebDriver, performance analysis, localization, and API testing</li>
+                            <li>Successfully delivered QA for Apple Website localized for Middle East market</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SapientNitro - Level 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo publicis">publicis<br><span class="sapient-red">sapient</span></div>
+                            <div class="company-info">
+                                <h3>SapientNitro</h3>
+                                <div class="job-title">Senior Associate, QA Level 2</div>
+                            </div>
+                        </div>
+                        <div class="duration">January 1, 2015 - August 28, 2015 (8 months)</div>
+                        <div class="location">📍 Gurgaon, India</div>
+                        <ul class="responsibilities">
+                            <li>Advanced automation framework development and optimization</li>
+                            <li>Senior-level team leadership and technical guidance</li>
+                            <li>Developed test cases, test plans, execution strategies, and defect tracking systems</li>
+                            <li>Pioneered mobile website testing and localization testing capabilities</li>
+                            <li>Mentoring and training of junior QA team members</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SapientNitro - Level 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo publicis">publicis<br><span class="sapient-red">sapient</span></div>
+                            <div class="company-info">
+                                <h3>SapientNitro</h3>
+                                <div class="job-title">Senior Associate, QA Level 1</div>
+                            </div>
+                        </div>
+                        <div class="duration">March 26, 2012 - December 31, 2014 (2 years 9 months)</div>
+                        <div class="location">📍 Gurgaon, India</div>
+                        <ul class="responsibilities">
+                            <li>Set up Test Automation Framework using Selenium Remote WebDriver in Selenium Grid with TestNG</li>
+                            <li>Led Automation and Manual QA teams, driving estimations and technical guidance</li>
+                            <li>Executed SEO, security, accessibility testing using WCAG 2.0 guidelines</li>
+                            <li>Integrated continuous testing using Jenkins</li>
+                            <li>Led functional and data testing design and review processes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capital IQ - Senior -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo spglobal">S&P<br>Global</div>
+                            <div class="company-info">
+                                <h3>Capital IQ (S&P Global)</h3>
+                                <div class="job-title">Senior Technology Quality Analyst</div>
+                            </div>
+                        </div>
+                        <div class="duration">April 1, 2011 - March 23, 2012 (11 months)</div>
+                        <div class="location">📍 Gurgaon, India</div>
+                        <ul class="responsibilities">
+                            <li>Advanced QA Design & Reviews for functional and data testing</li>
+                            <li>Senior-level automation development and framework optimization</li>
+                            <li>Advanced defect tracking systems management</li>
+                            <li>Leadership in mobile testing and localization testing capabilities</li>
+                            <li>Mentoring junior team members</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capital IQ - Technology QA -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo spglobal">S&P<br>Global</div>
+                            <div class="company-info">
+                                <h3>Capital IQ (S&P Global)</h3>
+                                <div class="job-title">Technology Quality Analyst</div>
+                            </div>
+                        </div>
+                        <div class="duration">May 19, 2008 - March 31, 2011 (2 years 10 months)</div>
+                        <div class="location">📍 Gurgaon, India</div>
+                        <ul class="responsibilities">
+                            <li>QA Design & Reviews for functional and data testing</li>
+                            <li>Automation Development for test cases, test plans, and execution strategies</li>
+                            <li>Defect tracking systems implementation and management</li>
+                            <li>Mobile Testing and localization testing capabilities development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Impetus Technologies -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <div class="company-logo impetus">
+                                <img src="https://www.impetus.com/wp-content/themes/impetus/images/logo.svg" alt="Impetus Technologies Logo" onerror="this.style.display='none'; this.parentNode.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.parentNode.style.color='white'; this.parentNode.innerHTML='IT';">
+                            </div>
+                            <div class="company-info">
+                                <h3>Impetus Technologies</h3>
+                                <div class="job-title">Trainee Software Engineer</div>
+                            </div>
+                        </div>
+                        <div class="duration">July 4, 2007 - January 14, 2008 (6 months)</div>
+                        <div class="location">📍 Noida, India</div>
+                        <ul class="responsibilities">
+                            <li>Entry-level software engineering role</li>
+                            <li>Learning and development in software testing fundamentals</li>
+                            <li>Basic automation and manual testing exposure</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>👥 Leadership & Management</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Team Leadership & Scaling</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                        <span class="skill-tag">Cross-functional Collaboration</span>
+                        <span class="skill-tag">Resource Planning</span>
+                        <span class="skill-tag">Performance Management</span>
+                        <span class="skill-tag">Training & Development</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>💻 Technical Skills</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Selenium WebDriver</span>
+                        <span class="skill-tag">TestNG</span>
+                        <span class="skill-tag">WebDriverIO</span>
+                        <span class="skill-tag">Mocha</span>
+                        <span class="skill-tag">Rest Assured</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>⚙️ Methodologies</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">SDLC</span>
+                        <span class="skill-tag">STLC</span>
+                        <span class="skill-tag">Test-Driven Development</span>
+                        <span class="skill-tag">Risk-Based Testing</span>
+                        <span class="skill-tag">Shift-Left Testing</span>
+                        <span class="skill-tag">Continuous Testing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>🛠️ Tools & Platforms</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JMeter</span>
+                        <span class="skill-tag">LoadRunner</span>
+                        <span class="skill-tag">K6</span>
+                        <span class="skill-tag">BrowserStack</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">JIRA</span>
+                        <span class="skill-tag">Zephyr</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Let's Connect</h3>
+                <p>Open to new opportunities and collaborations</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:ankitrathi85@gmail.com" title="Email">📧</a>
+                <a href="https://www.linkedin.com/in/ankitrathi85" target="_blank" title="LinkedIn">💼</a>
+                <a href="https://medium.com/@ankitrathi85" target="_blank" title="Medium Blog">📝</a>
+                <a href="tel:+16478645547" title="Phone">📞</a>
+            </div>
+            <p>&copy; 2025 Ankit Rathi. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
