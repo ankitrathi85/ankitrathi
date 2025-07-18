@@ -206,9 +206,14 @@
         .company-logo.whereto {
             background: white;
             color: #333;
-            font-size: 0.7rem;
+            font-size: 0.5rem;
             font-weight: 900;
             border: 2px solid #00b8d4;
+            padding: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .company-logo.whereto .logo-to {
@@ -218,19 +223,31 @@
         .company-logo.spglobal {
             background: white;
             color: #d32f2f;
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             font-weight: 900;
             border: 2px solid #d32f2f;
-            line-height: 1.1;
+            line-height: 0.9;
+            padding: 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .company-logo.publicis {
             background: white;
             color: #333;
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             font-weight: 900;
             border: 2px solid #e91e63;
-            line-height: 1.1;
+            line-height: 0.9;
+            padding: 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .company-logo.publicis .sapient-red {
@@ -403,6 +420,201 @@
             opacity: 0.8;
         }
 
+        /* Certificates Section */
+        .certificates {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .certificates-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .certificates-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: 2px solid #e8f2ff;
+            border-radius: 25px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-container .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .filter-group, .year-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cert-filter-btn, .year-filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #e8f2ff;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px;
+            color: #667eea;
+        }
+
+        .cert-filter-btn:hover, .year-filter-btn:hover,
+        .cert-filter-btn.active, .year-filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .certificates-table-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-height: 600px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .certificates-table-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .certificates-table-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .certificates-table-container::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+
+        .certificates-table-container::-webkit-scrollbar-thumb:hover {
+            background: #5a6fd8;
+        }
+
+        .certificates-table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .certificates-table-container th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            padding: 20px 15px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .certificates-table-container td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+
+        .certificates-table-container tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .certificate-name {
+            font-weight: 600;
+            color: #2c3e50;
+            max-width: 300px;
+            line-height: 1.4;
+        }
+
+        .cert-issuer {
+            color: #e74c3c;
+            font-weight: 500;
+        }
+
+        .cert-date {
+            color: #27ae60;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .cert-credential-id {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #495057;
+            max-width: 150px;
+            word-break: break-all;
+        }
+
+        .cert-link {
+            display: inline-block;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cert-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .cert-skills {
+            color: #8e44ad;
+            font-size: 12px;
+            line-height: 1.4;
+            max-width: 200px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .no-results h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .header h1 {
@@ -434,6 +646,53 @@
             .company-header {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            /* Certificates responsive */
+            .certificates-controls {
+                padding: 20px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+
+            .search-container {
+                min-width: unset;
+                margin-bottom: 0;
+            }
+
+            .filter-group, .year-filter {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .cert-filter-btn, .year-filter-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .certificates-table-container {
+                overflow-x: auto;
+            }
+
+            .certificates-table-container table {
+                font-size: 12px;
+                min-width: 800px;
+            }
+
+            .certificates-table-container th,
+            .certificates-table-container td {
+                padding: 10px 8px;
+            }
+
+            .certificate-name,
+            .cert-skills {
+                max-width: 200px;
+            }
+
+            .cert-credential-id {
+                max-width: 120px;
             }
         }
     </style>
@@ -490,6 +749,10 @@
                 <div class="stat-item">
                     <span class="stat-number">4</span>
                     <span class="stat-label">Frameworks Developed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">39+</span>
+                    <span class="stat-label">Certifications</span>
                 </div>
             </div>
         </div>
@@ -798,6 +1061,83 @@
         </div>
     </section>
 
+    <!-- Certificates Section -->
+    <section class="certificates">
+        <div class="container">
+            <h2 class="section-title">Professional Certificates & Credentials</h2>
+            
+            <div class="certificates-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalCertificates">39</span>
+                    <span class="stat-label">Total Certificates</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="totalIssuers">8</span>
+                    <span class="stat-label">Unique Issuers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="recentCertificates">4</span>
+                    <span class="stat-label">Last 2 Years</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="skillAreas">40+</span>
+                    <span class="stat-label">Skill Areas</span>
+                </div>
+            </div>
+
+            <div class="certificates-controls">
+                <div class="search-container">
+                    <input type="text" id="certificateSearch" placeholder="Search certificates, issuers, or skills...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                
+                <div class="filter-group">
+                    <button class="cert-filter-btn active" data-filter="all">All</button>
+                    <button class="cert-filter-btn" data-filter="LinkedIn">LinkedIn</button>
+                    <button class="cert-filter-btn" data-filter="AWS">AWS</button>
+                    <button class="cert-filter-btn" data-filter="Pluralsight">Pluralsight</button>
+                    <button class="cert-filter-btn" data-filter="S&P Global">S&P Global</button>
+                    <button class="cert-filter-btn" data-filter="Scrum Alliance">Scrum Alliance</button>
+                    <button class="cert-filter-btn" data-filter="ISTQB">ISTQB</button>
+                </div>
+                
+                <div class="year-filter">
+                    <button class="year-filter-btn" data-year="2025">2025</button>
+                    <button class="year-filter-btn" data-year="2024">2024</button>
+                    <button class="year-filter-btn" data-year="2023">2023</button>
+                    <button class="year-filter-btn" data-year="2021">2021</button>
+                    <button class="year-filter-btn" data-year="2020">2020</button>
+                    <button class="year-filter-btn" data-year="2019">2019</button>
+                    <button class="year-filter-btn" data-year="2018">2018</button>
+                    <button class="year-filter-btn" data-year="2017">2017</button>
+                    <button class="year-filter-btn" data-year="older">2015 & Earlier</button>
+                </div>
+            </div>
+
+            <div class="certificates-table-container">
+                <table id="certificatesTable">
+                    <thead>
+                        <tr>
+                            <th>Certificate Name</th>
+                            <th>Issuing Organization</th>
+                            <th>Issue Date</th>
+                            <th>Credential ID</th>
+                            <th>Verification</th>
+                            <th>Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody id="certificatesBody">
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                <div id="noCertificatesFound" class="no-results" style="display: none;">
+                    <h3>No certificates found</h3>
+                    <p>Try adjusting your search or filter criteria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -814,6 +1154,439 @@
             <p>&copy; 2025 Ankit Rathi. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Complete certificate data - All 39 certificates
+        const certificates = [
+            {
+                name: "The Complete WebdriverIO Course - Automation Testing Bootcamp",
+                issuer: "Udemy",
+                date: "Jun 2025",
+                credentialId: "UC-785e337f-5afe-48dc-ad1a-199fbc650738",
+                link: "https://www.udemy.com/certificate/UC-785e337f-5afe-48dc-ad1a-199fbc650738/",
+                skills: "WebdriverIO · Automation Testing · JavaScript · QA"
+            },
+            {
+                name: "Getting Things Done",
+                issuer: "LinkedIn",
+                date: "Apr 2025",
+                credentialId: "Not Provided",
+                link: "https://www.linkedin.com/learning/certificates/e23d08dcd4c87b54d9a46121474355bc4022c3d960c2022fade668db5aee23d1",
+                skills: "Productivity Improvement · Getting Things Done (GTD) Method"
+            },
+            {
+                name: "Ethics in the Age of Generative AI",
+                issuer: "Project Management Institute",
+                date: "Jul 2024",
+                credentialId: "464b4c7637d10d035bc8f7540a42fa328be61",
+                link: "https://drive.google.com/file/d/1N-JuERgrY6Gfrp13QWKTc2SXZ9EmMvwI/view?usp=drivesdk",
+                skills: "Ethics · Artificial Intelligence · Project Management"
+            },
+            {
+                name: "AWSome Day Online Conference : Certificate of Attendence",
+                issuer: "Amazon Web Services (AWS)",
+                date: "Nov 2023",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1aKEO-kjqRshz-N0LMGGiLDMZDDjt8KwR/view?usp=sharing",
+                skills: "AWS Services · Cloud Computing · Amazon Web Services"
+            },
+            {
+                name: "Artificial Intelligence Foundations Thinking Machines",
+                issuer: "LinkedIn",
+                date: "Jun 2023",
+                credentialId: "22b0c9d0a86a5288e1fe87414bb4a487854eee89055e8641f7d63a24c95e7755",
+                link: "https://drive.google.com/file/d/11ncmpbx5mgOwtFe8-mmoXMNeqFaizVgc/view?usp=sharing",
+                skills: "Artificial Intelligence (AI) · Machine Learning"
+            },
+            {
+                name: "Artificial Intelligence for Business Leaders",
+                issuer: "LinkedIn",
+                date: "Jun 2023",
+                credentialId: "AUZWvWJMzckyAu0vQjXk-Bg4iJqu",
+                link: "https://drive.google.com/file/d/1KftCH_9AyaAMpPHH-rP0ZcCOdV_NfogM/view?usp=sharing",
+                skills: "Artificial Intelligence (AI) · Business Strategy"
+            },
+            {
+                name: "Certified Scrum Product Owner® (CSPO®)",
+                issuer: "Scrum Alliance",
+                date: "Jan 2021 · Expired Jan 2023",
+                credentialId: "1326507",
+                link: "http://bcert.me/sjtilhmby",
+                skills: "Scrum · Product Management · Agile"
+            },
+            {
+                name: "AWS Certified Cloud Practitioner",
+                issuer: "Amazon Web Services (AWS)",
+                date: "Dec 2020 · Expired Dec 2023",
+                credentialId: "Not Provided",
+                link: "https://www.youracclaim.com/badges/c5178e3a-c82d-473d-b269-4acbb433ff41",
+                skills: "AWS · Cloud Computing · Cloud Architecture"
+            },
+            {
+                name: "EssentialTECH Foundations",
+                issuer: "S&P Global",
+                date: "Dec 2020",
+                credentialId: "26578963",
+                link: "https://www.credential.net/23942725-6cd6-46eb-8512-dccf0ef090b3",
+                skills: "Technology Foundations · Business Technology"
+            },
+            {
+                name: "A Cloud Guru : Kubernetes Fundamentals",
+                issuer: "A Cloud Guru | A Pluralsight Company",
+                date: "Jul 2020",
+                credentialId: "2BCEBA91C384",
+                link: "https://verify.acloud.guru/2BCEBA91C384",
+                skills: "Kubernetes · Container Orchestration · DevOps"
+            },
+            {
+                name: "Getting Started with Nmap",
+                issuer: "Pluralsight",
+                date: "Jul 2020",
+                credentialId: "REP 4127",
+                link: "https://drive.google.com/file/d/14AXXpQja-uWLt1gGI37G00mop5DT3gNM/view?usp=drivesdk",
+                skills: "Network Security · Penetration Testing · Cybersecurity"
+            },
+            {
+                name: "JMeter: Performance and Load Testing",
+                issuer: "LinkedIn",
+                date: "Jul 2020",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/13e9puNMoWA6Z3E5yHLLqgUhBO_R8_DXq/view?usp=drivesdk",
+                skills: "Performance Testing · Load Testing · JMeter"
+            },
+            {
+                name: "Learning Chrome Web Developer Tools",
+                issuer: "LinkedIn",
+                date: "Jul 2020",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1THhpMULcfIh_Y-BdLCsLP_JD0Y8mp5Lm/view?usp=drivesdk",
+                skills: "Web Development · Browser DevTools · Debugging"
+            },
+            {
+                name: "Learning Git and GitHub",
+                issuer: "LinkedIn",
+                date: "Jul 2020",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/13HsMuEPqqdrwInYOZdTF9vjO0bNwyojk/view?usp=drivesdk",
+                skills: "Git · GitHub · Version Control · Software Development"
+            },
+            {
+                name: "Mastering Self-Motivation",
+                issuer: "LinkedIn",
+                date: "Jul 2020",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1-_4oSgJVSJXSBn7nZ1q8N-OXGz86wR4n/view?usp=drivesdk",
+                skills: "Self-Motivation · Personal Development · Leadership"
+            },
+            {
+                name: "Performance Testing Foundations",
+                issuer: "LinkedIn",
+                date: "Jul 2020",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/14QpBrSKg8MNZmIbnvm7yWdMcaGHYC_E4/view?usp=drivesdk",
+                skills: "Performance Testing · Software Testing · QA"
+            },
+            {
+                name: "Postman Essential Training",
+                issuer: "LinkedIn",
+                date: "Jul 2020",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/12v-7v15W2JU8cm8fM0LBx0QgOJ_qLR5-/view?usp=drivesdk",
+                skills: "API Testing · Postman · REST APIs"
+            },
+            {
+                name: "Selenium Essential Training",
+                issuer: "LinkedIn",
+                date: "Jul 2020",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1s-5vsPg4Wusgvb9Yy7bb0XbLnecdV6gC/view?usp=drivesdk",
+                skills: "Selenium · Automation Testing · Web Testing"
+            },
+            {
+                name: "Managing Virtual Teams",
+                issuer: "LinkedIn",
+                date: "Dec 2019",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1GZmIAIIs4tehfgaIYvhAtPAIG_SXmMMV/view?usp=drivesdk",
+                skills: "Team Management · Remote Work · Leadership"
+            },
+            {
+                name: "A Cloud Guru : AWS Certified Solution Architect Associate",
+                issuer: "A Cloud Guru | A Pluralsight Company",
+                date: "Oct 2019",
+                credentialId: "8B8ED60E0265",
+                link: "https://verify.acloud.guru/8B8ED60E0265",
+                skills: "AWS · Solution Architecture · Cloud Design"
+            },
+            {
+                name: "Leading without Formal Authority",
+                issuer: "LinkedIn",
+                date: "Oct 2019",
+                credentialId: "AezxAtoGeVOPzlM7UV9muvcvIHBm",
+                link: "https://drive.google.com/file/d/14ixacm0KYH7XhNkJQqskLURUU69kHbNi/view?usp=drivesdk",
+                skills: "Leadership · Influence · Management"
+            },
+            {
+                name: "Docker Essential Training: 1 Installation and Configuration",
+                issuer: "LinkedIn",
+                date: "Mar 2019",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1OouosbAxAs4sXD3ZRx7zSwr-tGsmPT7n/view?usp=drivesdk",
+                skills: "Docker · Containerization · DevOps"
+            },
+            {
+                name: "Devops: The Big Picture",
+                issuer: "Pluralsight",
+                date: "Sep 2018",
+                credentialId: "REP ID 4127",
+                link: "https://drive.google.com/file/d/1eQOMCkYXxzGv8TmvVH-z9INzF74EOoRI/view?usp=drivesdk",
+                skills: "DevOps · Continuous Integration · Software Development"
+            },
+            {
+                name: "Getting Started With Jenkins Continuous Integration",
+                issuer: "Pluralsight",
+                date: "Sep 2018",
+                credentialId: "REP ID 4127",
+                link: "https://drive.google.com/file/d/1P7UsSz3mrvLq9noFrT2Rjk_vGMjq5Sua/view?usp=drivesdk",
+                skills: "Jenkins · Continuous Integration · DevOps"
+            },
+            {
+                name: "Implementing DevOps in the Real World",
+                issuer: "Pluralsight",
+                date: "Sep 2018",
+                credentialId: "REP ID 4127",
+                link: "https://drive.google.com/file/d/1RzqZ-P0B_d2okHlZ9VZ36XcMAoxwcUpy/view?usp=drivesdk",
+                skills: "DevOps Implementation · Continuous Delivery"
+            },
+            {
+                name: "Orchestration and Automation: The Big Picture",
+                issuer: "Pluralsight",
+                date: "Sep 2018",
+                credentialId: "REP ID 4127",
+                link: "https://drive.google.com/file/d/1xk0lMq-gDxDyKhvQp4A8OVuYCwdkrktR/view?usp=drivesdk",
+                skills: "Orchestration · Automation · Infrastructure"
+            },
+            {
+                name: "Testing Automation: The Big Picture",
+                issuer: "Pluralsight",
+                date: "Sep 2018",
+                credentialId: "REP ID 4127",
+                link: "https://drive.google.com/file/d/1wj8sQlkoEw9Diejk2kGOC4To-cqyQME7/view?usp=drivesdk",
+                skills: "Test Automation · Software Testing · QA"
+            },
+            {
+                name: "Leadership Essentials: Leading With Emotional Intelligence",
+                issuer: "S&P Global",
+                date: "Aug 2018",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1JHA_jiX-vwQ9IntsznyneU4pBosT9QRZ/view?usp=drivesdk",
+                skills: "Emotional Intelligence · Leadership · Management"
+            },
+            {
+                name: "Top Talent Career Conversation Initiative",
+                issuer: "S&P Global",
+                date: "Jul 2018",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1iv0_F31MrZhdJus_5iGhCM6K5nTAbWFJ/view?usp=drivesdk",
+                skills: "Career Development · Talent Management"
+            },
+            {
+                name: "Effective Interviewing Skills",
+                issuer: "S&P Global",
+                date: "Apr 2018",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1933y0NaVIjkUcpwwErTEuBluS0Vq-vi6/view?usp=drivesdk",
+                skills: "Interviewing · Recruitment · HR"
+            },
+            {
+                name: "Introduction To Lean",
+                issuer: "S&P Global",
+                date: "Apr 2018",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/file/d/1E8yLuuCbmLGydm9y4fEuOZsel42NNITO/view?usp=drivesdk",
+                skills: "Lean Methodology · Process Improvement"
+            },
+            {
+                name: "Certified Scrum Master",
+                issuer: "Scrum Alliance",
+                date: "Feb 2017 · Expired Jan 2023",
+                credentialId: "000612810",
+                link: "https://drive.google.com/file/d/1UNtNzdq5kxo-CfhrbouQOEc00gHIc-CO/view?usp=drivesdk",
+                skills: "Scrum · Agile · Project Management"
+            },
+            {
+                name: "ISTQB Agile Extension",
+                issuer: "ISTQB® - International Software Testing Qualifications Board",
+                date: "Jul 2015",
+                credentialId: "ITB - CTAE - 0000235",
+                link: "https://drive.google.com/file/d/1TeyH9gi5cy6oZ3PchCljaFUtvlSnSODR/view?usp=drivesdk",
+                skills: "ISTQB · Agile Testing · Software Testing"
+            },
+            {
+                name: "ISTQB",
+                issuer: "ISTQB® - International Software Testing Qualifications Board",
+                date: "Jun 2010",
+                credentialId: "ITB - CTFL - 0029099",
+                link: "https://drive.google.com/file/d/1OjMtaKFD3dRC9gKwhNbtBFGg5Z6Zev6b/view?usp=drivesdk",
+                skills: "ISTQB · Software Testing · QA Foundations"
+            },
+            {
+                name: "AWS Fundamentals for System Administrators",
+                issuer: "Pluralsight",
+                date: "Not Specified",
+                credentialId: "REP ID 4127",
+                link: "https://drive.google.com/file/d/1XNrMaGPy5lgzgNbBMiTO7TKZBHqqVJDm/view?usp=drivesdk",
+                skills: "AWS · System Administration · Cloud Computing"
+            },
+            {
+                name: "Agile Mindset: Think, Breathe, Be Agile",
+                issuer: "S&P Global",
+                date: "Not Specified",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/open?id=1oxmfrqjuDSHhFHgwkjirBukbJmxNfaxN",
+                skills: "Agile Methodology · Mindset · Agile Transformation"
+            },
+            {
+                name: "Automated Web Testing with Selenium WebDriver Using Java",
+                issuer: "Pluralsight",
+                date: "Not Specified",
+                credentialId: "REP ID 4127",
+                link: "https://drive.google.com/file/d/1_H7neNG3JmMhzySi_1A5XmHCvJL4DS4X/view?usp=drivesdk",
+                skills: "Selenium · Java · Web Testing · Automation"
+            },
+            {
+                name: "Manager Transition Workshop",
+                issuer: "S&P Global",
+                date: "Not Specified",
+                credentialId: "Not Provided",
+                link: "https://drive.google.com/open?id=1ZP4BTOXDVtLQRZNkZvoyLlQ-gf7IEg2U",
+                skills: "Management Transition · Leadership Development"
+            },
+            {
+                name: "QASS Foundation Level",
+                issuer: "SapientNitro",
+                date: "Not Specified",
+                credentialId: "Not Provided",
+                link: "Not Available",
+                skills: "Quality Assurance · Software Testing"
+            }
+        ];
+
+        let filteredCertificates = [...certificates];
+
+        function renderCertificatesTable() {
+            const tbody = document.getElementById('certificatesBody');
+            const noResults = document.getElementById('noCertificatesFound');
+            
+            if (filteredCertificates.length === 0) {
+                tbody.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            noResults.style.display = 'none';
+            
+            tbody.innerHTML = filteredCertificates.map(cert => `
+                <tr>
+                    <td class="certificate-name">${cert.name}</td>
+                    <td class="cert-issuer">${cert.issuer}</td>
+                    <td class="cert-date">${cert.date}</td>
+                    <td class="cert-credential-id">${cert.credentialId}</td>
+                    <td>
+                        ${cert.link !== 'Not Available' ? 
+                            `<a href="${cert.link}" target="_blank" class="cert-link">View Certificate</a>` :
+                            '<span style="color: #999; font-style: italic;">Not Available</span>'
+                        }
+                    </td>
+                    <td class="cert-skills">${cert.skills}</td>
+                </tr>
+            `).join('');
+        }
+
+        function filterCertificates() {
+            const searchTerm = document.getElementById('certificateSearch').value.toLowerCase();
+            const activeIssuer = document.querySelector('.cert-filter-btn.active[data-filter]')?.dataset.filter;
+            const activeYear = document.querySelector('.year-filter-btn.active[data-year]')?.dataset.year;
+            
+            filteredCertificates = certificates.filter(cert => {
+                const matchesSearch = !searchTerm || 
+                    cert.name.toLowerCase().includes(searchTerm) ||
+                    cert.issuer.toLowerCase().includes(searchTerm) ||
+                    cert.skills.toLowerCase().includes(searchTerm);
+                
+                const matchesIssuer = !activeIssuer || activeIssuer === 'all' || 
+                    cert.issuer.includes(activeIssuer);
+                
+                let matchesYear = !activeYear;
+                if (activeYear) {
+                    if (activeYear === 'older') {
+                        matchesYear = cert.date.includes('2015') || cert.date.includes('2010') || 
+                                    (!cert.date.includes('2016') && !cert.date.includes('2017') && 
+                                     !cert.date.includes('2018') && !cert.date.includes('2019') && 
+                                     !cert.date.includes('2020') && !cert.date.includes('2021') && 
+                                     !cert.date.includes('2022') && !cert.date.includes('2023') && 
+                                     !cert.date.includes('2024') && !cert.date.includes('2025') &&
+                                     cert.date !== 'Not Specified');
+                    } else {
+                        matchesYear = cert.date.includes(activeYear);
+                    }
+                }
+                
+                return matchesSearch && matchesIssuer && matchesYear;
+            });
+            
+            renderCertificatesTable();
+            updateCertificateStats();
+        }
+
+        function updateCertificateStats() {
+            const totalCerts = filteredCertificates.length;
+            const uniqueIssuers = new Set(filteredCertificates.map(cert => cert.issuer)).size;
+            const recentCerts = filteredCertificates.filter(cert => 
+                cert.date.includes('2024') || cert.date.includes('2025')).length;
+            const skillAreas = new Set(
+                filteredCertificates.flatMap(cert => 
+                    cert.skills.split(' · ').map(skill => skill.trim())
+                )
+            ).size;
+            
+            document.getElementById('totalCertificates').textContent = totalCerts;
+            document.getElementById('totalIssuers').textContent = uniqueIssuers;
+            document.getElementById('recentCertificates').textContent = recentCerts;
+            document.getElementById('skillAreas').textContent = skillAreas;
+        }
+
+        // Certificate event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search functionality
+            const searchInput = document.getElementById('certificateSearch');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterCertificates);
+            }
+
+            // Filter buttons
+            document.querySelectorAll('.cert-filter-btn[data-filter]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.cert-filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterCertificates();
+                });
+            });
+
+            // Year filter buttons
+            document.querySelectorAll('.year-filter-btn[data-year]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.year-filter-btn[data-year]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterCertificates();
+                });
+            });
+
+            // Initialize certificates table
+            renderCertificatesTable();
+            updateCertificateStats();
+        });
+    </script>
 
 </body>
 </html>
